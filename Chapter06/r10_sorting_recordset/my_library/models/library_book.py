@@ -25,7 +25,7 @@ class LibraryBook(models.Model):
         ('borrowed', 'Borrowed'),
         ('lost', 'Lost')],
         'State', default="draft")
-    lector = fields.Many2one('library.member', string='Lector')
+    member_id = fields.Many2one('library.member', string='Lector')
 
     @api.model
     def is_allowed_transition(self, old_state, new_state):
